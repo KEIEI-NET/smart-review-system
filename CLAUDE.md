@@ -1,7 +1,7 @@
 # CLAUDE.md
 
-*バージョン: v1.0.0*
-*最終更新: 2025年08月14日 15:30 JST*
+*バージョン: v1.1.0*
+*最終更新: 2025年08月16日 18:05 JST*
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -106,11 +106,13 @@ The system provides a sophisticated interactive interface through `showInteracti
 
 ### Security Configuration
 The system implements defense-in-depth with configurable security policies:
-- Path traversal prevention
-- Command injection protection
-- Output sanitization
+- Path traversal prevention (enhanced in v2.2.1)
+- Command injection protection (strengthened validation)
+- ReDoS attack mitigation (regex patterns with length limits)
+- Output sanitization (all error messages sanitized)
 - Agent execution sandboxing
 - File size limits and timeout controls
+- Memory optimization with batch processing
 
 ### Agent Configuration
 Agents are configured with priority levels, execution timeouts, and capability flags:
@@ -209,8 +211,9 @@ When updating any documentation in this repository (including this CLAUDE.md fil
 
 ---
 
-*最終更新: 2025年08月14日 15:30 JST*
-*バージョン: v1.0.0*
+*最終更新: 2025年08月16日 18:05 JST*
+*バージョン: v1.1.0*
 
 **更新履歴:**
+- v1.1.0 (2025年08月16日): セキュリティ設定更新、OS互換性情報追加
 - v1.0.0 (2025年08月14日): 初期バージョン作成、バージョン管理とタイムスタンプ要件を追加

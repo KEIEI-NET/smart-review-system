@@ -1,6 +1,6 @@
 {
-  "version": "2.2.0",
-  "lastUpdated": "2025-08-16T17:50:00+09:00",
+  "version": "2.2.1",
+  "lastUpdated": "2025-08-16T18:00:00+09:00",
   "minimumNodeVersion": "14.0.0",
   "minimumClaudeCodeVersion": "1.0.0",
   "components": {
@@ -91,6 +91,23 @@
     "allowPrerelease": false
   },
   "changelog": {
+    "2.2.1": {
+      "date": "2025-08-16",
+      "changes": [
+        "セキュリティ脆弱性修正（ReDoS、パストラバーサル、コマンドインジェクション）",
+        "OS互換性強化（Windows/macOS/Linux完全対応）",
+        "LICENSEファイル追加（MITライセンス）",
+        "CHANGELOG.mdとOS-COMPATIBILITY.md追加"
+      ]
+    },
+    "2.2.0": {
+      "date": "2025-08-16",
+      "changes": [
+        "共通ユーティリティモジュール導入",
+        "CI/CDパイプライン構築",
+        "包括的テストスイート追加"
+      ]
+    },
     "2.1.0": {
       "date": "2025-01-16",
       "changes": [
