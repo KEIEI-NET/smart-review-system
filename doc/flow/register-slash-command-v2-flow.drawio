@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-08-16T09:30:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64)" version="21.0.0" etag="register-slash-command-v2-flow" type="device">
+  <diagram name="Register Slash Command v2 Flow" id="register-slash-command-v2-process">
+    <mxGraphModel dx="1434" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="Register Slash Command v2 (register-slash-command-v2.js) - スラッシュコマンド管理システム" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="700" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Start -->
+        <mxCell id="start" value="開始" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Command Check -->
+        <mxCell id="cmd-check" value="コマンド解析" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="620" y="150" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Register Path -->
+        <mxCell id="register" value="registerCommands()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="detect-claude" value="Claude Code検出" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="validate-path" value="パス検証&#xa;(セキュリティ強化)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="370" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="load-config" value="設定ファイル読み込み" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="430" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="create-aliases" value="エイリアス作成&#xa;(逐次処理)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="480" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="validate-alias" value="エイリアス名検証&#xa;(パストラバーサル対策)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="540" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Verify Path -->
+        <mxCell id="verify" value="verifyInstallation()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="check-commands" value="コマンド確認" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="check-config" value="設定確認" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="370" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="validate-files" value="ファイル整合性確認" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="420" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Status Path -->
+        <mxCell id="status" value="showStatus()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="display-registered" value="登録済みコマンド表示" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="560" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="display-config" value="設定情報表示" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="560" y="370" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Uninstall Path -->
+        <mxCell id="uninstall" value="uninstallCommands()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="740" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="remove-aliases" value="エイリアス削除" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="740" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cleanup" value="クリーンアップ処理" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="740" y="370" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Reset Path -->
+        <mxCell id="reset" value="reset()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="920" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Help Path -->
+        <mxCell id="help" value="showHelp()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1100" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Security Features Box (v2.2.1) -->
+        <mxCell id="security-title" value="セキュリティ強化 (v2.2.1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="920" y="350" width="200" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="path-traversal" value="パストラバーサル防止" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="920" y="390" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="alias-validation" value="エイリアス名検証&#xa;/^[a-zA-Z0-9_-]+$/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1080" y="390" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sequential-process" value="逐次処理&#xa;(ファイル競合防止)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="920" y="440" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="error-sanitize" value="エラーサニタイズ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1080" y="440" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Command Structure -->
+        <mxCell id="cmd-structure-title" value="コマンド構造" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cmd-list" value="smart-review&#xa;├── help&#xa;├── changes (git diff分析)&#xa;├── all (全ファイル分析)&#xa;├── test (システムテスト)&#xa;├── security (セキュリティ監査)&#xa;├── performance (パフォーマンス分析)&#xa;└── auto-fix (自動修正)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontSize=11;fontFamily=Courier New" vertex="1" parent="1">
+          <mxGeometry x="480" y="540" width="280" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Processing Flow -->
+        <mxCell id="flow-title" value="処理フロー改善 (v2.2.1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="620" width="200" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="before-flow" value="【旧】並列処理&#xa;Promise.allSettled()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="100" y="660" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="after-flow" value="【新】逐次処理&#xa;for...of loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ccffcc;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="260" y="660" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="improvement" value="ファイル競合・レース&#xa;コンディション解消" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="200" y="710" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="start" target="cmd-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cmd-check" target="register">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="label-register" value="register/undefined" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="250" y="210" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="register" target="detect-claude">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="detect-claude" target="validate-path">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="validate-path" target="load-config">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="load-config" target="create-aliases">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="create-aliases" target="validate-alias">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- End -->
+        <mxCell id="end" value="終了" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="800" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow-end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="validate-alias" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

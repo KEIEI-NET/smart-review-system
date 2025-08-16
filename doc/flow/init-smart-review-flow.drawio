@@ -1,5 +1,5 @@
-<mxfile host="app.diagrams.net" modified="2025-08-14T07:15:00.000Z" agent="5.0" version="24.7.8" etag="drawio-diagram" type="device">
-  <diagram name="init-smart-review-flow" id="init-smart-review-flow">
+<mxfile host="app.diagrams.net" modified="2025-08-16T09:55:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64)" version="21.0.0" etag="init-smart-review-flow-v2" type="device">
+  <diagram name="init-smart-review-flow-v2" id="init-smart-review-flow-v2">
     <mxGraphModel dx="1422" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -306,14 +306,52 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         
+        <!-- OS Compatibility Box -->
+        <mxCell id="os-compat-box" value="🔄 OS互換性強化 (v2.2.1)" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="120" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="os-feature1" value="🏠 ホームディレクトリ&#xa;SystemUtils.getHomeDir()&#xa;(os.homedir()使用)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="160" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="os-feature2" value="📁 パスセパレータ対応&#xa;path.join()使用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="os-feature3" value="🚗 Windows対応&#xa;%USERPROFILE%/.claude" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="270" width="200" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="os-feature4" value="🍎 macOS/Linux対応&#xa;~/.claude" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Security Features Box -->
+        <mxCell id="security-box" value="🔒 セキュリティ強化 (v2.2.1)" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="380" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature1" value="✅ パス検証強化&#xa;SecurityUtils.validatePath()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="420" width="200" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature2" value="🛡️ エラーサニタイズ&#xa;SecurityUtils.sanitizeError()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="470" width="200" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature3" value="💾 安全なファイル操作&#xa;FileOperations.atomicCopy()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="1250" y="520" width="200" height="40" as="geometry" />
+        </mxCell>
+        
         <!-- Legend -->
         <mxCell id="legend" value="🔍 凡例&#xa;━━ メインフロー&#xa;┅┅ 詳細処理&#xa;━━ エラー処理&#xa;&#xa;📋 処理ステップ&#xa;◊ 条件分岐&#xa;⚠️ 警告・エラー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=left;fontColor=#000000;" vertex="1" parent="1">
           <mxGeometry x="50" y="40" width="120" height="120" as="geometry" />
         </mxCell>
         
         <!-- Title -->
-        <mxCell id="title" value="Smart Review 初期化プログラム フロー図&#xa;init-smart-review.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="200" y="50" width="400" height="40" as="geometry" />
+        <mxCell id="title" value="Smart Review 初期化プログラム フロー図 (v2.2.1強化版)&#xa;init-smart-review.js - OS互換性強化済み" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="500" height="40" as="geometry" />
         </mxCell>
         
       </root>

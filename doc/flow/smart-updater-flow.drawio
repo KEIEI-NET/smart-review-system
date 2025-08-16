@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-08-16T09:20:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64)" version="21.0.0" etag="smart-updater-flow" type="device">
+  <diagram name="Smart Updater Flow" id="smart-updater-process">
+    <mxGraphModel dx="1434" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="Smart Updater (smart-updater.js) - バージョン管理・自動更新システム" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Start -->
+        <mxCell id="start" value="開始" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Command Check -->
+        <mxCell id="cmd-check" value="コマンド解析" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="520" y="150" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Auto Update Path -->
+        <mxCell id="auto-update" value="autoUpdate()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="250" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="load-manifest" value="マニフェスト読み込み" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="compare-versions" value="バージョン比較" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="updates-check" value="更新あり？" style="rhombus;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="210" y="420" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="display-updates" value="更新リスト表示" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="200" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="confirm-update" value="更新確認" style="rhombus;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="210" y="550" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="apply-updates" value="更新適用" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="630" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Check Only Path -->
+        <mxCell id="check-only" value="checkForUpdates()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Status Path -->
+        <mxCell id="show-status" value="showStatus()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="250" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Update Path -->
+        <mxCell id="perform-update" value="performUpdate()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="680" y="250" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Rollback Path -->
+        <mxCell id="rollback" value="rollback()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="250" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Help Path -->
+        <mxCell id="show-help" value="showHelp()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="960" y="250" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Security Features -->
+        <mxCell id="security-title" value="セキュリティ機能 (v2.2.1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="350" width="200" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="file-size-check" value="ファイルサイズ制限&#xa;(1MB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="390" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="path-validation" value="パス検証&#xa;(パストラバーサル対策)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="520" y="390" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="hash-verification" value="SHA-256&#xa;整合性チェック" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="450" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="batch-processing" value="バッチ処理&#xa;(メモリ最適化)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="520" y="450" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Update Process Details -->
+        <mxCell id="update-title" value="更新プロセス詳細" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="350" width="150" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="backup-create" value="1. バックアップ作成" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="700" y="390" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="copy-files" value="2. ファイルコピー" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="700" y="430" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="verify-hash" value="3. ハッシュ検証" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="700" y="470" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="save-manifest" value="4. マニフェスト保存" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="700" y="510" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="log-update" value="5. 更新ログ記録" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="700" y="550" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Flow -->
+        <mxCell id="data-title" value="データフロー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="880" y="350" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="source-manifest" value="version-manifest.json&#xa;(ソース)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="880" y="390" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="installed-manifest" value=".smart-review-manifest.json&#xa;(インストール済み)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="880" y="460" width="180" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="update-log" value=".smart-review-update.log&#xa;(更新ログ)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="880" y="530" width="160" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Memory Optimization -->
+        <mxCell id="memory-title" value="メモリ最適化 (v2.2.1新機能)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="450" y="620" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="batch-size" value="バッチサイズ: 10ファイル" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="660" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="gc-promotion" value="ガベージコレクション促進&#xa;(50ファイルごと)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="560" y="660" width="160" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="streaming-hash" value="ストリーミングハッシュ計算" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="740" y="660" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="start" target="cmd-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cmd-check" target="auto-update">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="label-auto" value="auto/undefined" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="250" y="210" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="auto-update" target="load-manifest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="load-manifest" target="compare-versions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="compare-versions" target="updates-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="updates-check" target="display-updates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="display-updates" target="confirm-update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="confirm-update" target="apply-updates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- End -->
+        <mxCell id="end" value="終了" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="750" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow-end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="apply-updates" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

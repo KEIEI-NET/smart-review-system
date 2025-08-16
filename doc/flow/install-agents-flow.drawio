@@ -1,13 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2025-08-14T09:00:00.000Z" agent="5.0" version="24.7.8" etag="install-agents-flow" type="device">
-  <diagram name="install-agents-flow" id="install-agents-flow">
+<mxfile host="app.diagrams.net" modified="2025-08-16T09:45:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64)" version="21.0.0" etag="install-agents-flow-v2" type="device">
+  <diagram name="install-agents-flow-v2" id="install-agents-flow-v2">
     <mxGraphModel dx="1422" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         
         <!-- Title -->
-        <mxCell id="title" value="Agent Installer プログラム フロー図&#xa;install-agents.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
-          <mxGeometry x="300" y="50" width="400" height="40" as="geometry" />
+        <mxCell id="title" value="Agent Installer プログラム フロー図 (v2.2.1強化版)&#xa;install-agents.js - セキュリティ強化済み" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="500" height="40" as="geometry" />
         </mxCell>
         
         <!-- Start -->
@@ -54,16 +54,16 @@
           <mxGeometry x="150" y="660" width="150" height="50" as="geometry" />
         </mxCell>
         
-        <mxCell id="installstep3" value="📋 3. エージェントコピー&#xa;copyAgents()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
-          <mxGeometry x="150" y="740" width="150" height="50" as="geometry" />
+        <mxCell id="installstep3" value="📋 3. エージェントコピー&#xa;copyAgents()&#xa;(セキュリティ検証付き)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="150" y="740" width="150" height="60" as="geometry" />
         </mxCell>
         
         <mxCell id="installstep4" value="🔍 4. インストール確認&#xa;verifyInstallation()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontColor=#000000" vertex="1" parent="1">
-          <mxGeometry x="150" y="820" width="150" height="50" as="geometry" />
+          <mxGeometry x="150" y="830" width="150" height="50" as="geometry" />
         </mxCell>
         
         <mxCell id="installstep5" value="🎉 5. 完了メッセージ&#xa;showCompletionMessage()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontColor=#000000" vertex="1" parent="1">
-          <mxGeometry x="150" y="900" width="150" height="50" as="geometry" />
+          <mxGeometry x="150" y="910" width="150" height="50" as="geometry" />
         </mxCell>
         
         <!-- List Process -->
@@ -195,6 +195,52 @@
               <mxPoint x="500" y="980" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        
+        <!-- Security Features Box -->
+        <mxCell id="security-box" value="🔒 セキュリティ強化 (v2.2.1)" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="120" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature1" value="📛 ファイル名検証&#xa;パストラバーサル対策" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="160" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature2" value="📏 ファイルサイズ制限&#xa;(100KB制限)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="210" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature3" value="🛡️ エラーサニタイズ&#xa;(情報漏洩防止)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="260" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sec-feature4" value="✅ SecurityUtils使用&#xa;(パス検証強化)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="310" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Required Agents Box -->
+        <mxCell id="agents-box" value="📦 必須エージェント (5個)" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="380" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="agent1" value="• security-error-xss-analyzer.md" style="text;html=1;align=left;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="420" width="250" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="agent2" value="• super-debugger-perfectionist.md" style="text;html=1;align=left;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="440" width="250" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="agent3" value="• deep-code-reviewer.md" style="text;html=1;align=left;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="460" width="250" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="agent4" value="• project-documentation-updater.md" style="text;html=1;align=left;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="480" width="250" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="agent5" value="• code-comment-annotator-ja.md" style="text;html=1;align=left;fontSize=11;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="950" y="500" width="250" height="20" as="geometry" />
         </mxCell>
         
         <!-- Legend -->
