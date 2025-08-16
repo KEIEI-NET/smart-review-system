@@ -304,7 +304,8 @@ class AgentInstaller {
         console.log();
       }
     } catch (error) {
-      console.error('エージェント一覧の取得に失敗:', error.message);
+      const sanitizedError = SecurityUtils.sanitizeError(error);
+      console.error('エージェント一覧の取得に失敗:', sanitizedError);
     }
   }
 

@@ -157,12 +157,31 @@ class SmartUpdater {
   }
 
   /**
-   * バージョンマニフェストの読み込み
+   * バージョンマニフェストの読み込み（セキュリティ強化）
    */
   async loadManifest(manifestPath) {
     try {
+      const stats = await fs.stat(manifestPath);
+      
+      // ファイルサイズ制限（1MB）
+      if (stats.size > 1024 * 1024) {
+        throw new Error('Manifest file too large');
+      }
+      
       const content = await fs.readFile(manifestPath, 'utf8');
-      const manifest = JSON.parse(content);
+      
+      // JSONパースエラーのキャッチ
+      let manifest;
+      try {
+        manifest = JSON.parse(content);
+      } catch (parseError) {
+        throw new Error(`Invalid manifest JSON: ${parseError.message}`);
+      }
+      
+      // マニフェストの基本検証
+      if (!manifest.version || !manifest.components) {
+        throw new Error('Invalid manifest structure');
+      }
       
       // SHA256ハッシュを計算して更新
       await this.updateManifestHashes(manifest);
@@ -200,29 +219,53 @@ class SmartUpdater {
   }
 
   /**
-   * マニフェストのハッシュ値を更新
+   * マニフェストのハッシュ値を更新（メモリ最適化）
    */
   async updateManifestHashes(manifest) {
+    const BATCH_SIZE = 10; // バッチサイズ制限
+    
     for (const [category, items] of Object.entries(manifest.components)) {
-      for (const [filename, info] of Object.entries(items)) {
-        let filePath;
+      const itemEntries = Object.entries(items);
+      
+      // バッチ処理でメモリ使用量制御
+      for (let i = 0; i < itemEntries.length; i += BATCH_SIZE) {
+        const batch = itemEntries.slice(i, i + BATCH_SIZE);
         
-        if (category === 'agents') {
-          filePath = path.join(this.projectPath, 'agents', filename);
-        } else {
-          filePath = path.join(this.projectPath, filename);
-        }
-        
-        try {
-          const content = await fs.readFile(filePath);
-          const hash = crypto.createHash('sha256').update(content).digest('hex');
-          const stats = await fs.stat(filePath);
+        await Promise.all(batch.map(async ([filename, info]) => {
+          // ファイル名のサニタイズ（パストラバーサル対策）
+          const safeFilename = path.basename(filename);
           
-          info.sha256 = hash;
-          info.size = stats.size;
-          info.lastModified = stats.mtime.toISOString();
-        } catch (error) {
-          console.warn(`⚠️  ファイルが見つかりません: ${filename}`);
+          let filePath;
+          if (category === 'agents') {
+            filePath = path.join(this.projectPath, 'agents', safeFilename);
+          } else {
+            filePath = path.join(this.projectPath, safeFilename);
+          }
+          
+          // パス検証
+          try {
+            filePath = SecurityUtils.validatePath(this.projectPath, 
+              category === 'agents' ? path.join('agents', safeFilename) : safeFilename);
+          } catch (error) {
+            console.warn(`⚠️  無効なパス: ${filename}`);
+            return;
+          }
+          
+          try {
+            const hash = await SecurityUtils.calculateFileHash(filePath);
+            const stats = await fs.stat(filePath);
+            
+            info.sha256 = hash;
+            info.size = stats.size;
+            info.lastModified = stats.mtime.toISOString();
+          } catch (error) {
+            console.warn(`⚠️  ファイルが見つかりません: ${safeFilename}`);
+          }
+        }));
+        
+        // ガベージコレクション促進（Node.js 14.18.0+）
+        if (global.gc && i % (BATCH_SIZE * 5) === 0) {
+          global.gc();
         }
       }
     }
