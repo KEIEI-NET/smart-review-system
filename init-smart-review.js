@@ -7,6 +7,7 @@ const fs = require('fs').promises;
 const { execFile } = require('child_process');
 const { promisify } = require('util');
 const execFileAsync = promisify(execFile);
+const { SystemUtils } = require('./lib/common-utils');
 
 /**
  * プロジェクト初期化クラス
@@ -16,7 +17,7 @@ class SmartReviewInitializer {
     this.projectPath = process.cwd();
     this.claudeCodePath = path.join(this.projectPath, '.claudecode');
     this.commandsPath = path.join(this.claudeCodePath, 'commands');
-    this.globalCommandsPath = path.join(process.env.HOME || process.env.USERPROFILE, '.claude', 'commands');
+    this.globalCommandsPath = path.join(SystemUtils.getHomeDir(), '.claude', 'commands');
   }
 
   /**
@@ -426,7 +427,7 @@ class SmartReviewInitializer {
     console.log('🤖 Smart Review エージェントをインストール中...');
     
     const agentsPath = path.join(this.projectPath, 'agents');
-    const targetPath = path.join(process.env.HOME || process.env.USERPROFILE, '.claude', 'agents');
+    const targetPath = path.join(SystemUtils.getHomeDir(), '.claude', 'agents');
     
     try {
       // プロジェクトのagentsディレクトリが存在するか確認

@@ -1290,7 +1290,8 @@ module.exports = {
     for (const agentId of agents) {
       try {
         // エージェントの存在をチェック（実際の実行はしない）
-        const agentPath = path.join(process.env.HOME || process.env.USERPROFILE, '.claude', 'agents', agentId);
+        const homeDir = require('os').homedir();
+        const agentPath = path.join(homeDir, '.claude', 'agents', agentId);
         // 注: ここではパスの存在チェックのシミュレーション
         agentCount++;
       } catch (error) {
@@ -1441,7 +1442,7 @@ module.exports = {
         id: 'code-comment-annotator-ja',
         name: 'コードコメント注釈者（日本語）',
         model: 'sonnet',
-        path: process.env.COMMENT_AGENT_PATH || path.join(process.env.HOME || process.env.USERPROFILE, '.claude', 'agents', 'code-comment-annotator-ja'),
+        path: process.env.COMMENT_AGENT_PATH || path.join(require('os').homedir(), '.claude', 'agents', 'code-comment-annotator-ja'),
         role: '日本語コメントの追加',
         allowedCommands: ['git']
       };
